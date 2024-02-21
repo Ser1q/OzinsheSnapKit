@@ -20,6 +20,19 @@ class SignUpViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         configureViews()
     }
+    //Handling DarkTheme
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        textFieldEmail.layer.borderColor = UIColor(resource: .textfieldBorder).cgColor
+        textFieldEmail.layer.backgroundColor = UIColor(resource: .FFFFFF_1_C_2431).cgColor
+        
+        textFieldPassword.layer.borderColor = UIColor(resource: .textfieldBorder).cgColor
+        textFieldPassword.layer.backgroundColor = UIColor(resource: .FFFFFF_1_C_2431).cgColor
+        
+        textFieldPasswordAgain.layer.borderColor = UIColor(resource: .textfieldBorder).cgColor
+        textFieldPasswordAgain.layer.backgroundColor = UIColor(resource: .FFFFFF_1_C_2431).cgColor
+    }
     
     //MARK: - Private properties
     private let registerLabel = {
