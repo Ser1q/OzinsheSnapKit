@@ -100,7 +100,7 @@ private extension SlidesCell{
         contentView.addSubview(titleLabel)
         titleLabel.textAlignment = .center
         titleLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(imageView.snp_bottomMargin).inset(2)
+            make.bottom.equalTo(contentView.safeAreaLayoutGuide).inset(dynamicValue(for: 276))
             make.leading.trailing.equalToSuperview()
         }
         
@@ -109,14 +109,14 @@ private extension SlidesCell{
         descriptionLabel.textAlignment = .center
         descriptionLabel.numberOfLines = 4
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).inset(-24)
-            make.leading.trailing.equalToSuperview().inset(32)
+            make.top.equalTo(titleLabel.snp.bottom).inset(dynamicValue(for: -24))
+            make.leading.trailing.equalToSuperview().inset(dynamicValue(for: 32))
         }
         
         //MARK: skipButton
         contentView.addSubview(skipButton)
         skipButton.snp.makeConstraints { make in
-            make.top.equalTo(contentView.safeAreaLayoutGuide).inset(24)
+            make.top.equalTo(contentView.safeAreaLayoutGuide).inset(dynamicValue(for: 24))
             make.trailing.equalToSuperview().inset(24)
             make.height.equalTo(24)
             make.width.greaterThanOrEqualTo(70)
@@ -125,9 +125,9 @@ private extension SlidesCell{
         //MARK: nextButton
         contentView.addSubview(nextButton)
         nextButton.snp.makeConstraints { make in
-            make.bottom.equalTo(contentView.safeAreaLayoutGuide).inset(38)
-            make.leading.trailing.equalToSuperview().inset(24)
-            make.height.equalTo(56)
+            make.bottom.equalTo(contentView.safeAreaLayoutGuide).inset(dynamicValue(for: 38))
+            make.leading.trailing.equalToSuperview().inset(dynamicValue(for: 24))
+            make.height.equalTo(dynamicValue(for: 56))
         }
         
     }
@@ -145,3 +145,15 @@ private extension NSAttributedString {
         return NSAttributedString(attributedString: attributedString)
     }
 }
+
+private extension SlidesCell{
+    func dynamicValue(for size: CGFloat) -> CGFloat {
+        let screenSize = UIScreen.main.bounds.size
+        let baseScreenSize = CGSize(width: 375, height: 812)
+        let scaleFactor = min(screenSize.width, screenSize.height) / min(baseScreenSize.width, baseScreenSize.height)
+        
+        return size * scaleFactor
+    }
+}
+
+

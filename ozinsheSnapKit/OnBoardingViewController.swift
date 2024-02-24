@@ -105,7 +105,7 @@ private extension OnBoardingViewController{
         //MARK: - PageControl
         view.addSubview(pageControl)
         pageControl.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(118)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(dynamicValue(for: 118))
             make.centerX.equalToSuperview()
             make.height.equalTo(6)
         }
@@ -165,4 +165,13 @@ extension OnBoardingViewController: UICollectionViewDelegateFlowLayout{
     }
 }
 
+private extension OnBoardingViewController{
+    func dynamicValue(for size: CGFloat) -> CGFloat {
+        let screenSize = UIScreen.main.bounds.size
+        let baseScreenSize = CGSize(width: 375, height: 812)
+        let scaleFactor = min(screenSize.width, screenSize.height) / min(baseScreenSize.width, baseScreenSize.height)
+        
+        return size * scaleFactor
+    }
+}
 
