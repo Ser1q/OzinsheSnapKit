@@ -194,31 +194,55 @@
 				BA4878132B84E64700ECF1BE /* SharedInstance */,
 				BA4878122B84E62100ECF1BE /* Static */,
 				BA48780D2B84A34300ECF1BE /* Extensions */,
-				BAF329592B70D93E00A983EC /* TabBarController.swift */,
-				BA50C5632B7B4D3E0047CA6F /* SlidesCell.swift */,
-				BA50C55F2B7B367F0047CA6F /* OnBoardingViewController.swift */,
 				BADB62A52B76562B00E31B03 /* Controllers */,
-				BA6243862B77900C00887477 /* MovieCell */,
+				BA50C56B2B7B5D460047CA6F /* Fonts */,
 				BA9414DD2B70B6510036BB75 /* AppDelegate.swift */,
 				BA9414DF2B70B6510036BB75 /* SceneDelegate.swift */,
 				BA9414E62B70B6530036BB75 /* Assets.xcassets */,
 				BA9414E82B70B6530036BB75 /* LaunchScreen.storyboard */,
 				BA9414EB2B70B6530036BB75 /* Info.plist */,
-				BA50C56B2B7B5D460047CA6F /* Fonts */,
 				BA48780B2B849C6700ECF1BE /* Localizable.strings */,
 			);
 			path = ozinsheSnapKit;
 			sourceTree = "<group>";
 		};
+		BAC640F32B8A092400D87A73 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				BA50C55F2B7B367F0047CA6F /* OnBoardingViewController.swift */,
+				BA50C5632B7B4D3E0047CA6F /* SlidesCell.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		BAC640F42B8A094300D87A73 /* SignInAndUp */ = {
+			isa = PBXGroup;
+			children = (
+				BA4878092B8345E400ECF1BE /* SignInViewController.swift */,
+				BA12A77C2B85C3B800D7C7DB /* SignUpViewController.swift */,
+			);
+			path = SignInAndUp;
+			sourceTree = "<group>";
+		};
+		BAC640F52B8A095800D87A73 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				BAF329592B70D93E00A983EC /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
 		BADB62A52B76562B00E31B03 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BA6243862B77900C00887477 /* MovieCell */,
+				BAC640F52B8A095800D87A73 /* TabBarController */,
+				BAC640F42B8A094300D87A73 /* SignInAndUp */,
+				BAC640F32B8A092400D87A73 /* OnBoarding */,
 				BA4878082B8345AF00ECF1BE /* Profile */,
 				BA4878072B8345A400ECF1BE /* Favourites */,
 				BA4878062B83459800ECF1BE /* Search */,
 				BA4878052B83459000ECF1BE /* Home */,
-				BA4878092B8345E400ECF1BE /* SignInViewController.swift */,
-				BA12A77C2B85C3B800D7C7DB /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

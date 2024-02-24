@@ -327,7 +327,7 @@ private extension SignInViewController{
         let email = textFieldEmail.text ?? " "
         let password = textFieldPassword.text ?? " "
 
-        if !email.hasSuffix("@mail"){
+        if !email.contains("@mail"){
             self.errorString.snp.updateConstraints { make in
                 make.height.equalTo(22)
                 make.top.equalTo(textFieldEmail.snp.bottom).inset(-16)
